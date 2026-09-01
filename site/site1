@@ -1,0 +1,1504 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LUXMOTO | Motos de Luxo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --gold: #d6a84f;
+            --gold-light: #f3d48a;
+            --black: #050505;
+            --dark: #0c0c0c;
+            --dark2: #121212;
+            --white: #f5f5f5;
+            --gray: #999;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* SCROLLBAR */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 20px;
+        }
+
+        /* HEADER */
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: .4s;
+            background: rgba(0,0,0,.15);
+            backdrop-filter: blur(8px);
+        }
+
+        header.scrolled {
+            background: rgba(5,5,5,.95);
+            padding: 15px 7%;
+            border-bottom: 1px solid rgba(214,168,79,.2);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: white;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 7%;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.92) 0%, rgba(0,0,0,.62) 42%, rgba(0,0,0,.15) 100%),
+                url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(transparent, #050505);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .mini-title {
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 8vw, 105px);
+            line-height: .95;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: #ccc;
+            max-width: 580px;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 28px;
+            border: 1px solid var(--gold);
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            transition: .35s;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #080808;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(214,168,79,.25);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: black;
+        }
+
+        /* STATS */
+
+        .stats {
+            position: absolute;
+            bottom: 55px;
+            right: 7%;
+            z-index: 5;
+            display: flex;
+            gap: 50px;
+        }
+
+        .stat {
+            text-align: right;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 25px;
+            color: var(--gold);
+        }
+
+        .stat span {
+            color: #aaa;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+        }
+
+        .section-title small {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(38px, 5vw, 65px);
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            color: #888;
+            max-width: 600px;
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+
+        /* MODELS */
+
+        #modelos {
+            background: #050505;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .bike-card {
+            background: #0d0d0d;
+            border: 1px solid #202020;
+            overflow: hidden;
+            position: relative;
+            transition: .4s;
+        }
+
+        .bike-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(214,168,79,.7);
+            box-shadow: 0 20px 50px rgba(0,0,0,.6);
+        }
+
+        .bike-img {
+            height: 330px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bike-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .7s;
+        }
+
+        .bike-card:hover .bike-img img {
+            transform: scale(1.08);
+        }
+
+        .badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            background: var(--gold);
+            color: #000;
+            padding: 7px 12px;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .bike-info {
+            padding: 28px;
+        }
+
+        .bike-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .bike-info p {
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
+
+        .bike-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .details {
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        /* FEATURE */
+
+        .feature {
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background:
+                linear-gradient(90deg, #050505 10%, rgba(5,5,5,.75) 48%, rgba(5,5,5,.1)),
+                url("https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .feature-content {
+            max-width: 600px;
+        }
+
+        .feature-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 6vw, 80px);
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .feature-content h2 span {
+            color: var(--gold);
+        }
+
+        .feature-content p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: #0a0a0a;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 2px;
+            background: #242424;
+        }
+
+        .experience-card {
+            padding: 45px 30px;
+            background: #0b0b0b;
+            transition: .3s;
+        }
+
+        .experience-card:hover {
+            background: #111;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .experience-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .experience-card p {
+            color: #777;
+            line-height: 1.7;
+            font-size: 13px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr .8fr;
+            grid-template-rows: 280px 280px;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item::after {
+            content: "LUXMOTO";
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            letter-spacing: 3px;
+            font-size: 10px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background:
+                linear-gradient(rgba(5,5,5,.9),rgba(5,5,5,.95)),
+                url("https://images.unsplash.com/photo-1558981359-219d6364c9c8?auto=format&fit=crop&w=2000&q=90")
+                center/cover;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .contact-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60px;
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .contact-text h2 span {
+            color: var(--gold);
+        }
+
+        .contact-text p {
+            color: #888;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: #0d0d0d;
+            border: 1px solid #272727;
+            color: white;
+            padding: 17px;
+            outline: none;
+            font-family: inherit;
+            transition: .3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--gold);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #030303;
+            padding: 60px 7% 30px;
+            border-top: 1px solid #1c1c1c;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        .footer-brand p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.8;
+            max-width: 350px;
+            margin-top: 20px;
+        }
+
+        footer h4 {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin: 12px 0;
+        }
+
+        footer a {
+            color: #777;
+            text-decoration: none;
+            font-size: 12px;
+            transition: .3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #171717;
+            padding-top: 25px;
+            color: #555;
+            font-size: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* MODAL */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 700px;
+            background: #101010;
+            border: 1px solid #333;
+            padding: 40px;
+            position: relative;
+            animation: zoom .3s ease;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .modal-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .modal-box h2 span {
+            color: var(--gold);
+        }
+
+        .modal-box p {
+            color: #888;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                opacity: 0;
+                transform: scale(.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width: 900px) {
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #080808;
+                flex-direction: column;
+                padding: 30px 7%;
+                gap: 25px;
+                border-bottom: 1px solid #222;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .stats {
+                display: none;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .hero {
+                padding: 0 6%;
+                background-position: 60% center;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+            }
+
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(4, 250px);
+            }
+
+            .gallery-item:first-child {
+                grid-row: auto;
+            }
+
+            .contact-text h2 {
+                font-size: 48px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .copyright {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header id="header">
+
+        <div class="logo">
+            LUX<span>MOTO</span>
+        </div>
+
+        <nav id="nav">
+            <a href="#inicio">Início</a>
+            <a href="#modelos">Modelos</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="mini-title">
+                MOTOCICLETAS DE ALTO PADRÃO
+            </div>
+
+            <h1>
+                A arte de<br>
+                <span>pilotar.</span>
+            </h1>
+
+            <p>
+                Descubra uma coleção exclusiva de motocicletas
+                projetadas para quem não aceita nada menos que
+                performance, tecnologia e design extraordinário.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#modelos" class="btn btn-gold">
+                    Explorar coleção
+                </a>
+
+                <a href="#contato" class="btn btn-outline">
+                    Fale conosco
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>1000+</strong>
+                <span>CC de potência</span>
+            </div>
+
+            <div class="stat">
+                <strong>300+</strong>
+                <span>KM/H</span>
+            </div>
+
+            <div class="stat">
+                <strong>01</strong>
+                <span>Experiência</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODELOS -->
+
+    <section id="modelos">
+
+        <div class="section-title reveal">
+
+            <small>01 / Coleção</small>
+
+            <h2>
+                Máquinas extraordinárias.
+            </h2>
+
+            <p>
+                Conheça alguns dos modelos que representam
+                a essência da LUXMOTO.
+            </p>
+
+        </div>
+
+
+        <div class="models-grid">
+
+
+            <div class="bike-card reveal">
+
+                <div class="bike-img">
+
+                    <span class="badge">
+                        EXCLUSIVA
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1000&q=85">
+
+                </div>
+
+                <div class="bike-info">
+
+                    <h3>Phantom X</h3>
+
+                    <p>
+                        Performance brutal combinada com
+                        acabamento premium.
+                    </p>
+
+                    <div class="bike-bottom">
+
+                        <span class="price">
+                            R$ 189.900
+                        </span>
+
+                        <a href="#" class="details"
+                           onclick="openModal('Phantom X','R$ 189.900')">
+                            Ver detalhes
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bike-card reveal">
+
+                <div class="bike-img">
+
+                    <span class="badge">
+                        PREMIUM
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1558980394-0c5e4d7a0b2d?auto=format&fit=crop&w=1000&q=85">
+
+                </div>
+
+                <div class="bike-info">
+
+                    <h3>Vortex R</h3>
+
+                    <p>
+                        Design agressivo para uma experiência
+                        incomparável.
+                    </p>
+
+                    <div class="bike-bottom">
+
+                        <span class="price">
+                            R$ 229.900
+                        </span>
+
+                        <a href="#" class="details"
+                           onclick="openModal('Vortex R','R$ 229.900')">
+                            Ver detalhes
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bike-card reveal">
+
+                <div class="bike-img">
+
+                    <span class="badge">
+                        LIMITED
+                    </span>
+
+                    <img src="https://images.unsplash.com/photo-1622185135505-2d795003994a?auto=format&fit=crop&w=1000&q=85">
+
+                </div>
+
+                <div class="bike-info">
+
+                    <h3>Black Hawk</h3>
+
+                    <p>
+                        Uma combinação perfeita entre luxo,
+                        tecnologia e velocidade.
+                    </p>
+
+                    <div class="bike-bottom">
+
+                        <span class="price">
+                            R$ 279.900
+                        </span>
+
+                        <a href="#" class="details"
+                           onclick="openModal('Black Hawk','R$ 279.900')">
+                            Ver detalhes
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURE -->
+
+    <section class="feature">
+
+        <div class="feature-content reveal">
+
+            <small class="mini-title">
+                ENGINEERED FOR EMOTION
+            </small>
+
+            <h2>
+                Não é apenas uma moto.<br>
+                É uma <span>obra de arte.</span>
+            </h2>
+
+            <p>
+                Cada detalhe foi pensado para transformar
+                velocidade em emoção. Materiais premium,
+                acabamento refinado e tecnologia de última
+                geração se encontram em uma máquina feita
+                para ser admirada e pilotada.
+            </p>
+
+            <a href="#contato" class="btn btn-gold">
+                Solicitar atendimento
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIÊNCIA -->
+
+    <section class="experience" id="experiencia">
+
+        <div class="section-title reveal">
+
+            <small>02 / Experiência</small>
+
+            <h2>
+                Além da motocicleta.
+            </h2>
+
+        </div>
+
+
+        <div class="experience-grid">
+
+
+            <div class="experience-card reveal">
+
+                <div class="icon">◆</div>
+
+                <h3>Design exclusivo</h3>
+
+                <p>
+                    Linhas marcantes e acabamento sofisticado
+                    para quem busca exclusividade.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card reveal">
+
+                <div class="icon">⚡</div>
+
+                <h3>Performance</h3>
+
+                <p>
+                    Engenharia desenvolvida para entregar
+                    uma experiência de pilotagem emocionante.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card reveal">
+
+                <div class="icon">◈</div>
+
+                <h3>Tecnologia</h3>
+
+                <p>
+                    Sistemas modernos para elevar segurança,
+                    conforto e controle.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card reveal">
+
+                <div class="icon">★</div>
+
+                <h3>Exclusividade</h3>
+
+                <p>
+                    Atendimento personalizado para clientes
+                    que procuram algo realmente especial.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- GALERIA -->
+
+    <section id="galeria">
+
+        <div class="section-title reveal">
+
+            <small>03 / Lifestyle</small>
+
+            <h2>
+                O luxo em movimento.
+            </h2>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558980394-0c5e4d7a0b2d?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1622185135505-2d795003994a?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+
+    <section class="contact" id="contato">
+
+        <div class="contact-grid">
+
+            <div class="contact-text reveal">
+
+                <small class="mini-title">
+                    04 / CONTATO
+                </small>
+
+                <h2>
+                    Sua próxima<br>
+                    <span>máquina.</span>
+                </h2>
+
+                <p>
+                    Está procurando uma motocicleta exclusiva?
+                    Entre em contato com nossa equipe e descubra
+                    as opções disponíveis.
+                </p>
+
+            </div>
+
+
+            <form class="reveal" onsubmit="sendForm(event)">
+
+                <input
+                    type="text"
+                    placeholder="Seu nome"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Seu melhor e-mail"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    placeholder="WhatsApp"
+                    required
+                >
+
+                <select required>
+
+                    <option value="">
+                        Escolha uma motocicleta
+                    </option>
+
+                    <option>
+                        Phantom X
+                    </option>
+
+                    <option>
+                        Vortex R
+                    </option>
+
+                    <option>
+                        Black Hawk
+                    </option>
+
+                    <option>
+                        Ainda não decidi
+                    </option>
+
+                </select>
+
+                <textarea
+                    placeholder="Conte o que você procura..."
+                    required
+                ></textarea>
+
+                <button class="btn btn-gold" type="submit">
+                    Enviar solicitação
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+                    LUX<span>MOTO</span>
+                </div>
+
+                <p>
+                    Motocicletas de alto padrão para pessoas
+                    que enxergam a velocidade como uma forma
+                    de arte.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Navegação</h4>
+
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#modelos">Modelos</a></li>
+                    <li><a href="#experiencia">Experiência</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Atendimento</h4>
+
+                <ul>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Localização</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Empresa</h4>
+
+                <ul>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Termos</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <span>
+                © 2026 LUXMOTO. Todos os direitos reservados.
+            </span>
+
+            <span>
+                PERFORMANCE • LUXURY • PASSION
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MODAL -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <div class="close" onclick="closeModal()">
+                ×
+            </div>
+
+            <small class="mini-title">
+                LUXMOTO COLLECTION
+            </small>
+
+            <h2>
+                <span id="modalBike"></span>
+            </h2>
+
+            <p>
+                Uma motocicleta criada para quem procura
+                desempenho, presença e exclusividade.
+                Entre em contato com nossa equipe para
+                conhecer disponibilidade, condições e
+                possibilidades de personalização.
+            </p>
+
+            <h3 id="modalPrice"
+                style="color:#d6a84f;margin-bottom:25px;">
+            </h3>
+
+            <a href="#contato"
+               class="btn btn-gold"
+               onclick="closeModal()">
+                Quero essa moto
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* HEADER AO ROLAR */
+
+        window.addEventListener("scroll", function() {
+
+            const header = document.getElementById("header");
+
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+
+        });
+
+
+        /* MENU MOBILE */
+
+        function toggleMenu() {
+
+            const nav = document.getElementById("nav");
+
+            nav.classList.toggle("active");
+
+        }
+
+
+        /* MODAL */
+
+        function openModal(name, price) {
+
+            event.preventDefault();
+
+            document.getElementById("modalBike").innerText = name;
+
+            document.getElementById("modalPrice").innerText = price;
+
+            document.getElementById("modal").classList.add("active");
+
+        }
+
+
+        function closeModal() {
+
+            document.getElementById("modal").classList.remove("active");
+
+        }
+
+
+        /* FECHAR MODAL CLICANDO FORA */
+
+        document.getElementById("modal").addEventListener("click", function(e) {
+
+            if (e.target === this) {
+                closeModal();
+            }
+
+        });
+
+
+        /* FORMULÁRIO */
+
+        function sendForm(e) {
+
+            e.preventDefault();
+
+            alert(
+                "Solicitação enviada com sucesso! " +
+                "Nossa equipe entrará em contato."
+            );
+
+            e.target.reset();
+
+        }
+
+
+        /* ANIMAÇÃO AO APARECER */
+
+        const observer = new IntersectionObserver(
+
+            function(entries) {
+
+                entries.forEach(function(entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("show");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: .12
+            }
+
+        );
+
+
+        document.querySelectorAll(".reveal").forEach(function(el) {
+
+            observer.observe(el);
+
+        });
+
+
+        /* FECHAR MENU AO CLICAR */
+
+        document.querySelectorAll("nav a").forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                document.getElementById("nav")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
