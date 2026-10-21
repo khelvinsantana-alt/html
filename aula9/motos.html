@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de motos Ducati</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #121214;
+      background: radial-gradient(circle at top, #2a2a2e 0%, #0e0e10 70%);
+      color: #e8e8ec;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 2rem;
+      color: #e8e8ec;
+      margin-bottom: 30px;
+      padding-bottom: 14px;
+      border-bottom: 3px solid #d90429;
+    }
+
+    .card {
+      position: relative;
+      background: #1c1c20;
+      border: 1px solid #3a3a40;
+      border-left: 6px solid #c0c3c9;
+      border-radius: 10px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-left-color: #d90429;
+      box-shadow: 0 10px 26px rgba(217, 4, 41, 0.35);
+    }
+
+    .card h4 {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #f2f2f5;
+    }
+
+    .card p {
+      color: #b4b7bd;
+      line-height: 1.5;
+    }
+
+    /* Oferta do dia */
+    #promo-dia {
+      background: #d90429;
+      background: linear-gradient(135deg, #b3001b, #d90429 55%, #7a0013);
+      border: 1px solid #ff4d6a;
+      border-left: 6px solid #e8e8ec;
+      box-shadow: 0 8px 24px rgba(217, 4, 41, 0.45);
+    }
+
+    #promo-dia h4 {
+      color: #ffffff;
+    }
+
+    #promo-dia p {
+      color: #ffe3e8;
+    }
+
+    #promo-dia::after {
+      content: "OFERTA";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #d90429;
+      background: #e8e8ec;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Destaque */
+    .destaque {
+      background: #26262b;
+      border: 1px solid #c0c3c9;
+      border-left: 6px solid #d90429;
+    }
+
+    /* Esgotado */
+    .esgotado {
+      opacity: 0.6;
+      border-left-color: #5a5a60;
+    }
+
+    .esgotado h4::after {
+      content: " • ESGOTADO";
+      color: #ff4d6a;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    .esgotado:hover {
+      transform: none;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.4rem; letter-spacing: 2px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <h1>Motos Ducati em destaque</h1>
+
+    <div class="card" id="promo-dia">
+      <h4>Oferta do dia: Panigale V4</h4>
+      <p>Superesportiva de 1.103 cc e 214 cv por R$ 189.900,00</p>
+    </div>
+
+    <div class="card">
+      <h4>Monster</h4>
+      <p>Naked de 937 cc, ágil e esportiva por R$ 79.900,00</p>
+    </div>
+
+    <div class="card destaque">
+      <h4>Multistrada V4 S</h4>
+      <p>A trail de turismo mais completa, saindo por R$ 169.900,00</p>
+    </div>
+
+    <div class="card esgotado">
+      <h4>Scrambler Icon</h4>
+      <p>Ela está esgotada, volte em breve. A nova remessa chega por R$ 59.900,00</p>
+    </div>
+  </main>
+
+</body>
+</html>
