@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium Moto Parts - Peças premium para motos esportivas.">
+
+  <title>Premium Moto Parts</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="estilo.css">
+
+  <style>
+
+    .fundo-inicio {
+      position: relative;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.75)),
+        url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1800");
+      background-size: cover;
+      background-position: center;
+      min-height: 700px;
+    }
+
+    .cabecalho-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cabecalho-logo h2 {
+      color: #d4af37;
+      font-size: 25px;
+    }
+
+    .cabecalho-logo p {
+      color: white;
+      letter-spacing: 5px;
+    }
+
+    .cortes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 25px;
+      width: 100%;
+    }
+
+    .corte {
+      width: 30%;
+      min-width: 260px;
+      background: #1b1b1b;
+      border-radius: 10px;
+      overflow: hidden;
+      color: white;
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .corte:hover {
+      transform: translateY(-7px);
+      border-color: #d4af37;
+    }
+
+    .corte img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .corte-info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .corte-info strong {
+      color: white;
+    }
+
+    .corte-preco {
+      color: #d4af37;
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .corte-info a {
+      background: #d4af37;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .corte-info a:hover {
+      background: white;
+    }
+
+    .sobre-conteudo img {
+      width: 100%;
+      max-width: 570px;
+      border-radius: 10px;
+    }
+
+    .rodape h2 {
+      color: #d4af37;
+    }
+
+    @media(max-width: 768px) {
+      .cortes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .corte {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- INÍCIO -->
+
+  <div class="fundo-inicio">
+
+    <header>
+
+      <nav class="cabecalho-conteudo conteiner">
+
+        <div class="cabecalho-icones" data-aos="fade-down">
+
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener">
+            <i class="fa-brands fa-tiktok fa-2x"></i>
+          </a>
+
+        </div>
+
+        <!-- LOGO -->
+
+        <div class="cabecalho-logo" data-aos="fade-up">
+
+          <h2>PREMIUM MOTO</h2>
+          <p>PARTS</p>
+
+        </div>
+
+        <div data-aos="fade-down">
+
+          <a class="cabecalho-botao"
+             href="https://api.whatsapp.com/send?phone=5511989421521&text=Olá! Gostaria de consultar uma peça."
+             target="_blank" rel="noopener">
+
+            Comprar peças
+
+          </a>
+
+        </div>
+
+      </nav>
+
+
+      <!-- DESTAQUE -->
+
+      <main class="destaque conteiner" data-aos="fade-up">
+
+        <h1>
+          PERFORMANCE, TECNOLOGIA E EXCLUSIVIDADE PARA SUA MOTO.
+        </h1>
+
+        <p>
+          As melhores peças e acessórios para motos de alta cilindrada.
+        </p>
+
+        <a
+          href="https://api.whatsapp.com/send?phone=5511989421521&text=Olá! Gostaria de conhecer os produtos."
+          class="botao-contato"
+          target="_blank" rel="noopener">
+
+          Conhecer produtos
+
+        </a>
+
+      </main>
+
+    </header>
+
+  </div>
+
+
+  <!-- SOBRE -->
+
+  <section class="sobre">
+
+    <div class="conteiner sobre-conteudo">
+
+      <div data-aos="zoom-in">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=900"
+          alt="Motocicleta esportiva">
+
+      </div>
+
+      <div class="sobre-descricao" data-aos="zoom-out-left">
+
+        <h2>Sobre nossa loja</h2>
+
+        <p>
+          Somos especializados em peças e acessórios de alto padrão
+          para motocicletas. Trabalhamos com produtos de qualidade,
+          tecnologia e desempenho para quem busca o melhor para sua moto.
+        </p>
+
+        <p>
+          Qualidade, potência e exclusividade em cada detalhe.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUTOS -->
+
+  <section class="servicos">
+
+    <div class="servicos-conteudo conteiner">
+
+      <h2>PEÇAS PREMIUM</h2>
+
+      <p>
+        Confira nossa seleção de componentes de alto desempenho
+        para motocicletas esportivas e de alta cilindrada.
+      </p>
+
+    </div>
+
+
+    <section class="cortes">
+
+
+      <!-- FREIO -->
+
+      <div class="corte" data-aos="fade-up">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=700"
+          alt="Peça de motocicleta">
+
+        <div class="corte-info">
+
+          <strong>Freio Brembo Racing</strong>
+
+          <span class="corte-preco">R$ 8.500,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse no Freio Brembo Racing."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ESCAPAMENTO -->
+
+      <div class="corte" data-aos="fade-up" data-aos-delay="150">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=700"
+          alt="Motocicleta esportiva">
+
+        <div class="corte-info">
+
+          <strong>Escapamento Akrapovič</strong>
+
+          <span class="corte-preco">R$ 12.900,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse no Escapamento Akrapovic."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SUSPENSÃO -->
+
+      <div class="corte" data-aos="fade-up" data-aos-delay="250">
+
+        <img
+          src="https://www.ohlins.com/storage/CBBCD3738B0F695D289BAB678DF0DFF13E16318802BCEAEE2F4AC4C054EDD2C2/13441ff78da8413db7777d8f2eeff8e2/840-560-0-jpg.Jpeg/media/134eda26c30a4cf484bf72ad2e4e61b4/BM460%20-%20S46PR1C1LB.jpeg"
+          alt="Suspensão Ohlins">
+
+        <div class="corte-info">
+
+          <strong>Suspensão Öhlins</strong>
+
+          <span class="corte-preco">R$ 15.500,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse na Suspensão Ohlins."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RODAS -->
+
+      <div class="corte" data-aos="fade-up" data-aos-delay="350">
+
+        <img
+          src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=700"
+          alt="Roda de motocicleta">
+
+        <div class="corte-info">
+
+          <strong>Rodas Marchesini</strong>
+
+          <span class="corte-preco">R$ 22.000,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse nas Rodas Marchesini."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- MANETES -->
+
+      <div class="corte" data-aos="fade-up" data-aos-delay="450">
+
+        <img
+          src="https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=700"
+          alt="Detalhes de motocicleta">
+
+        <div class="corte-info">
+
+          <strong>Manetes Rizoma</strong>
+
+          <span class="corte-preco">R$ 2.800,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse nos Manetes Rizoma."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- PAINEL -->
+
+      <div class="corte" data-aos="fade-up" data-aos-delay="550">
+
+        <img
+          src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=700"
+          alt="Detalhes de motocicleta esportiva">
+
+        <div class="corte-info">
+
+          <strong>Painel TFT Racing</strong>
+
+          <span class="corte-preco">R$ 6.700,00</span>
+
+          <a href="https://api.whatsapp.com/send?phone=5511989421521&text=Tenho interesse no Painel TFT Racing."
+             target="_blank">
+            Consultar produto
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </section>
+
+
+  <!-- LOCALIZAÇÃO -->
+
+  <section class="servicos">
+
+    <h2>VENHA CONHECER NOSSA LOJA</h2>
+
+  </section>
+
+
+  <!-- MAPA -->
+
+  <iframe
+    title="Localização da loja"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7476.4115143508725!2d-54.58602051703828!3d-20.45674056051272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e8954ac0b10d%3A0x7149aba0cb5688b8!2sShopping%20Campo%20Grande!5e0!3m2!1sen!2sbr!4v1688840244482!5m2!1sen!2sbr"
+    width="100%"
+    height="450"
+    style="border:0;"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+
+
+  <!-- RODAPÉ -->
+
+  <footer class="rodape">
+
+    <div class="rodape-icones">
+
+      <a href="https://www.instagram.com/" target="_blank">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </a>
+
+      <a href="https://www.tiktok.com/" target="_blank">
+        <i class="fa-brands fa-tiktok fa-2x"></i>
+      </a>
+
+    </div>
+
+    <div>
+
+      <h2>PREMIUM MOTO PARTS</h2>
+
+    </div>
+
+    <p>
+      Copyright 2026 | Premium Moto Parts - Todos os direitos reservados.
+    </p>
+
+  </footer>
+
+
+  <!-- WHATSAPP FIXO -->
+
+  <a
+    href="https://api.whatsapp.com/send?phone=5511989421521&text=Olá! Gostaria de consultar uma peça."
+    class="botao-whatsapp"
+    target="_blank"
+    rel="noopener">
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp">
+
+    <span class="dica-texto">
+      Consulte nossas peças
+    </span>
+
+  </a>
+
+
+  <!-- ANIMAÇÕES -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
